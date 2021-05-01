@@ -6,8 +6,8 @@ Paper:
 
 Data:
 
-Figures
+Figures:
 
-Google earth engine code
+Google earth engine code:
 
-R-scripts
+R-scripts:
