@@ -1,4 +1,12 @@
-https://gistin.users.earthengine.app/view/fogoasis#regionid=1
+///////////////////////////////////
+//draw resultant maps and locations
+///////////////////////////////////
+
+//either 
+//https://gistin.users.earthengine.app/view/fogoasis or
+//https://gistin.users.earthengine.app/view/fogoasis#regionid=? to highlight a region
+//https://gistin.users.earthengine.app/view/fogoasis#llz=lat?,long?,zoomlevel? zone to a point (lat,long, zoom level)
+//https://gistin.users.earthengine.app/view/fogoasis#llz=-16.2474,-73.4435,11 zone to a point (lat,long, zoom level) 
 
 
 //set up map
@@ -9,27 +17,50 @@ https://gistin.users.earthengine.app/view/fogoasis#regionid=1
 Map.setOptions("TERRAIN");
 Map.style().set('cursor', 'crosshair');
 
-
+//get # entries
 
 var regionid = ui.url.get('regionid',0);
-//if 0 then choose random region to highligh
+var llz = ui.url.get('llz',0);
+
+print(regionid);
+print(llz);
+
+//if region and lat long 0 then choose random region to highligh
+//if not then zoom into region or lat long, z
 if (regionid === 0){
- regionid = Math.floor(Math.random() * 59) + 1;  
+  if (llz === 0){
+  regionid = Math.floor(Math.random() * 59) + 1;
+  var focusregion = Lomas_regions.filter(ee.Filter.eq('Id',regionid));
+  Map.centerObject(focusregion, 8);
+  } else {
+  var llc =  llz.split(",");
+  Map.setCenter(Number(llc[1]),Number(llc[0]), Number(llc[2]));
+  var thepoint = ee.Geometry.Point([Number(llc[1]), Number(llc[0])]);
+  var focusregion = Lomas_regions.filterBounds(thepoint);
+  }
+} else {
+  var focusregion = Lomas_regions.filter(ee.Filter.eq('Id',regionid));
+  Map.centerObject(focusregion, 8);
 }
+
 //Build the regions
 
-var focusregion = Lomas_regions.filter(ee.Filter.eq('Id',regionid));
-var otherregions = Lomas_regions.filter(ee.Filter.eq('Class','Fog Oasis'));
-var otherregions = otherregions.filter(ee.Filter.neq('Id',regionid));
+
+
+
+
+  var otherregions = Lomas_regions.filter(ee.Filter.eq('Class','Fog Oasis'));
+  var otherregions = otherregions.filter(ee.Filter.neq('Id',regionid));
 var transit = Lomas_regions.filter(ee.Filter.eq('Class','Transitional'));
 var transit = transit.filter(ee.Filter.neq('Id',regionid));
+
 
 //set map up 
 
 
 
 
-Map.centerObject(focusregion, 8);
+
 var empty = ee.Image().byte();
 var regionsbackground =  empty.paint({
   featureCollection: focusregion,
@@ -65,7 +96,8 @@ var legpallet = [
   'f7df07', //2 weeks
   '7bed00', //1 month
   '0ec441', //3 months
-  '1e9094',//6 months  
+  '1e9094',//6 months
+  'FFFFFF', //emply cell
   'A900E4']; //tillandsia
 
 var darkpallet = [
@@ -121,19 +153,17 @@ Map.onClick(function(coords) {
   var filtered = locs.filterBounds(bpoint).first();
   var rfiltered = Lomas_regions.filterBounds(bpoint).first();
   //set variables
-  var name = "Nombre: ";
-  var group = "Group: ";
-  var groupnam = "Group Name: ";
+  var name = "Fog oasis site name: ";
+  var group = "Fog oasis region ID: ";
+  var groupnam = "Fog oasis Region Name: ";
   var latlong ="Lat, Long: ";
-  var reg ="Región del país: ";
-  var plantno ="Plantas: ";
-  var ref = "Ref: ";
-  
+
+
   
   //print(rfiltered.get("Id").getInfo());
   
   
-  
+  //build text on clicked point
   if   (filtered.getInfo() === null){
     if (rfiltered.getInfo() === null){
       group = group + "NULL";
@@ -144,39 +174,25 @@ Map.onClick(function(coords) {
     }
     name = name + 'NULL';
     latlong = latlong + 'NULL';
-    reg = reg + 'NULL';
-    plantno = plantno + 'NULL';
-    ref = ref + 'NULL';
-    
   } else {
     name = name + filtered.get("Nom_Loma").getInfo();
     var lat = filtered.get("Latitud").getInfo();
     var long = filtered.get("Longitud").getInfo();
     latlong = latlong + lat + ", " + long;
-    reg = reg + filtered.get("R_Pais").getInfo();
-    plantno = plantno + filtered.get("Plantas").getInfo();
-    ref = ref + filtered.get("Refs").getInfo();
-    
     if (rfiltered.getInfo() === null){
       group = group + "NULL";
       groupnam = groupnam +"NULL";
     } else {
-    
     group = group + rfiltered.get("Id").getInfo();
     groupnam = groupnam + rfiltered.get("Nom").getInfo();
     //and so on
     }
-   
-    
   }
  //add text
-    panel.widgets().set(1, ui.Label(name));
-    panel.widgets().set(2, ui.Label(group));
-    panel.widgets().set(3, ui.Label(groupnam));
+    panel.widgets().set(1, ui.Label(group));
+    panel.widgets().set(2, ui.Label(groupnam));
+    panel.widgets().set(3, ui.Label(name));
     panel.widgets().set(4, ui.Label(latlong));
-    panel.widgets().set(5, ui.Label(reg));
-    panel.widgets().set(6, ui.Label(plantno));
-    panel.widgets().set(7, ui.Label(ref));
 });
 
 // Add the panel to the ui.root.
@@ -195,7 +211,7 @@ var legend = ui.Panel({
  
 // Create legend title
 var legendTitle = ui.Label({
-  value: 'Fog Oasis, time in flush',
+  value: 'Verdant Fog Oasis (av. flush)',
   style: {
     fontWeight: 'bold',
     fontSize: '16px',
@@ -234,10 +250,10 @@ var makeRow = function(color, name) {
 };
  
 // name of the legend
-var names = ['<2% (< 1 week - Ephemeral)','2% (<1 week)','2-4% (1-2 weeks)','4-8% (2-4 weeks)', '8-25% (1-3 months)','>50% (>6 months)','Tillandsia fog oasis'];
+var names = ['<2% (< 1 week - Ephemeral)','2% (<1 week)','2-4% (1-2 weeks)','4-8% (2-4 weeks)', '8-25% (1-3 months)','>50% (>6 months)',' ','Tillandsia fog oasis'];
  
 // Add color and and names
-for (var i = 0; i < 7; i++) {
+for (var i = 0; i < 8; i++) {
   legend.add(makeRow(legpallet[i], names[i]));
   } 
   legend.add;

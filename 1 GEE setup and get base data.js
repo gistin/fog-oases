@@ -202,8 +202,8 @@ Map.add(legend);
 
 Export.image.toAsset({
   image:lomasbimask,
-  description:'Lomas_class_map',
-  assetId:'fog_oasis/fo_class',
+  description:'Lomas_class_map_2021',
+  assetId:'fog_oasis/fo_class2021',
   scale:250,
   region:AOI
 });
@@ -241,7 +241,7 @@ Export.image.toAsset({
 
 Export.image.toDrive({
   image: lomasbimask,
-  description: 'lomas_TIFF_12_2020',
+  description: 'lomas_TIFF_04_2021',
   scale: 250,
   fileFormat: 'GeoTIFF',
   region:AOI
