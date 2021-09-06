@@ -16,45 +16,45 @@ Only 4% of fog oases are protected, most are threatened by mining, urban develop
 
 ### Data
 
--   Verdant fog oasis as geotiff map:  <https://github.com/gistin/fog_oases/data/fog_oasis2021.tif>
+-   Verdant fog oasis as geotiff map:  <https://github.com/gistin/fog-oases/blob/main/data/fog_oasis_verdant2021.tif>
 
--   *Tillandsia* fog oasis as geotiff map:  [https://github.com/gistin/fog_oases/data/fog_oasis_tillandsia2021.tif](https://github.com/gistin/fog_oases/data/)
+-   *Tillandsia* fog oasis as geotiff map:  <https://github.com/gistin/fog-oases/blob/main/data/fog_oasis_verdant2021.tif>
 
--   *Fog oasis sites as ESRI shapefile: <https://github.com/gistin/fog_oases/data>/FO_locs2021.\**
+-   *Fog oasis sites as ESRI shapefile: <https://github.com/gistin/fog-oases/tree/main/data>/FO_locs2021.\**
 
--   *Fog oasis regions as ESRI shapefile: <https://github.com/gistin/fog_oases/data>/Fo_regions2021.\**
+-   *Fog oasis regions as ESRI shapefile: <https://github.com/gistin/fog-oases/tree/main/data>/Fo_regions2021.\**
 
--   Fog oasis sites, see supplementary excel file,sheet "1 Fog Oasis sites" Fog oasis region names and sites, see supplementary excel file, sheet "2 Region names and sites" [*https://github.com/gistin/fog_oases/data/*Sub%20information.xlsx](https://github.com/gistin/fog_oases/data/Sub%20information.xlsx)
+-   Fog oasis sites, see supplementary excel file,sheet "1 Fog Oasis sites" Fog oasis region names and sites, see supplementary excel file, sheet "2 Region names and sites" <https://github.com/gistin/fog-oases/blob/main/data/Sub%20information.xlsx>
 
--   Fog oasis regions area (summary in table 3, figs. 2 and 3), see supplementary excel file, sheet "3 Fog Oasis area (km2)" [*https://github.com/gistin/fog_oases/data/*Sub%20information.xlsx](https://github.com/gistin/fog_oases/data/)
+-   Fog oasis regions area (summary in table 3, figs. 2 and 3), see supplementary excel file, sheet "3 Fog Oasis area (km2)" <https://github.com/gistin/fog-oases/blob/main/data/Sub%20information.xlsx>
 
 ### Figures
 
--   [Fig. 1.](https://github.com/gistin/fog_oases/figures/) Map of fog oasis sites (botanical collection sites) and protected areas of Peru and Chile.
+-   [Fig. 1.](https://github.com/gistin/fog-oases/blob/main/figures/Figure%201%20localities.jpg) Map of fog oasis sites (botanical collection sites) and protected areas of Peru and Chile.
 
--   [Fig. 2.](https://github.com/gistin/fog_oases/figures/) Map of the verdant and *Tillandsia* fog oases of Peru and Chile, names are given as unique region identifiers, 1 to 60. A 10 km shade zone has been applied to the fog oases to highlight smaller areas beyond print resolution. Transitional areas are not highlighted.
+-   [Fig. 2.](https://github.com/gistin/fog-oases/blob/main/figures/Figure%202%20Fog%20Oasis.jpg) Map of the verdant and *Tillandsia* fog oases of Peru and Chile, names are given as unique region identifiers, 1 to 60. A 10 km shade zone has been applied to the fog oases to highlight smaller areas beyond print resolution. Transitional areas are not highlighted.
 
--   [Fig. 3.](https://github.com/gistin/fog_oases/figures/) Summary Infographic of fog oases characteristics. Left to right: Extent (shades of green), area of core verdant oasis (km2), area of ephemeral verdant oasis (square symbol size indicates proportion), area of Tillandsia fog oasis (km2). Characteristics (shades of blue): aridity index, elevation (m), distance from coastline (km), slope angle (degrees), slope direction (arrows show direction). Analysis (red to blue): duration of season (NDVI \>0.15), peak month (as number), isolation (km). Impacts and knowledge (shades of purple to blue-grey): protection (% of protected area), human footprint (global scale of 0–50) and approximate number of plant species recorded. N.B. maps rotated 28˚from north.
+-   [Fig. 3.](https://github.com/gistin/fog-oases/blob/main/figures/Figure%203%20Fog%20Oasis%20charactisation.jpg) Summary Infographic of fog oases characteristics. Left to right: Extent (shades of green), area of core verdant oasis (km2), area of ephemeral verdant oasis (square symbol size indicates proportion), area of Tillandsia fog oasis (km2). Characteristics (shades of blue): aridity index, elevation (m), distance from coastline (km), slope angle (degrees), slope direction (arrows show direction). Analysis (red to blue): duration of season (NDVI \>0.15), peak month (as number), isolation (km). Impacts and knowledge (shades of purple to blue-grey): protection (% of protected area), human footprint (global scale of 0–50) and approximate number of plant species recorded. N.B. maps rotated 28˚from north.
 
--   [Fig S1.](https://github.com/gistin/fog_oases/figures/) Stacked bar chart of areas of verdant fog and *Tillandsia* oases in km2. Region identifiers and names are given with a unique region number from 1 to 60 running from north to south (see figure 2 for detail).
+-   [Fig S1.](https://github.com/gistin/fog-oases/blob/main/figures/Figure%20S1%20Fog%20Oasis%20area.jpg) Stacked bar chart of areas of verdant fog and *Tillandsia* oases in km2. Region identifiers and names are given with a unique region number from 1 to 60 running from north to south (see figure 2 for detail).
 
--   [Fig S2.](https://github.com/gistin/fog_oases/figures/) Whisker plots for the core verdant fog oases characterisation analysis.
+-   [Fig S2.](https://github.com/gistin/fog-oases/blob/main/figures/Figure%20S2.jpg) Whisker plots for the core verdant fog oases characterisation analysis.
 
 ### Google earth engine code
 
-1.  [GEE setup baseline data and analysis](https://github.com/gistin/)
+1.  [GEE setup baseline data and analysis](https://github.com/gistin/fog-oases/blob/main/1%20GEE%20setup%20and%20get%20base%20data.js)
 
-2.  [GEE Map](https://github.com/gistin/fog_oases/figures/)
+2.  [GEE Map](https://github.com/gistin/fog-oases/blob/main/2%20GEE%20map%20the%20data%20(for%20app).js)
 
-3.  [GEE zonal statisitics](https://github.com/gistin/fog_oases/figures/)
+3.  [GEE zonal statistics](https://github.com/gistin/fog-oases/blob/main/3%20GEE%20zonal%20statisitc%20to%20export.js)
 
 ### Google earth engine interactive map
 
 Interactive google earth engine maps: <https://gistin.users.earthengine.app/view/fogoasis>
 
-To highlight and zoom to a region: <https://gistin.users.earthengine.app/view/fogoasis#regionid=?>
+To highlight and zoom to a region: https://gistin.users.earthengine.app/view/fogoasis\#regionid=?
 
-To zoom to a point: <https://gistin.users.earthengine.app/view/fogoasis#llz=lat?,long?,zoomlevel?>
+To zoom to a point: https://gistin.users.earthengine.app/view/fogoasis\#llz=lat?,long?,zoomlevel?
 
 **Examples:**
 
