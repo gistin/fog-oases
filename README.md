@@ -2,7 +2,13 @@
 
 This is the repository for the paper "Seeing through the cloud – mapping desert fog-oases habitats using 20 years of MODIS imagery over Peru and Chile". Moat *et. al.* 2021
 
-### Citation and page link
+### Citation
+
+Please cite as:
+
+Moat, Justin, Alfonso Orellana-García, Carolina Tovar, Mónica Arakaki, César Arana, Asunción Cano, Luis Faundez, Martin Gardner, Paulina Hechenleitner, Josefina Hepp, Gwilym Lewis, José-Manuel Mamani, María Miyashiro, and Oliver Whaley. 2021. "Seeing through the Clouds - Mapping Desert Fog Oasis Ecosystems Using 20 Years of MODIS Imagery over Peru and Chile." *International Journal of Applied Earth Observations and Geoinformation.*
+
+<https://www.researchgate.net/publication/354402653_Seeing_through_the_clouds_-Mapping_desert_fog_oasis_ecosystems_using_20_years_of_MODIS_imagery_over_Peru_and_Chile>
 
 ## Abstract
 
@@ -52,11 +58,10 @@ Only 4% of fog oases are protected, most are threatened by mining, urban develop
 
 Interactive google earth engine maps: <https://gistin.users.earthengine.app/view/fogoasis>
 
-To highlight and zoom to a region: https://gistin.users.earthengine.app/view/fogoasis\#regionid=?
+To highlight and zoom to a region: [https://gistin.users.earthengine.app/view/fogoasis\\\#regionid=](https://gistin.users.earthengine.app/view/fogoasis\#regionid=)?
 
-To zoom to a point: https://gistin.users.earthengine.app/view/fogoasis\#llz=lat?,long?,zoomlevel?
+To zoom to a point: [https://gistin.users.earthengine.app/view/fogoasis\\\#llz=lat](https://gistin.users.earthengine.app/view/fogoasis\#llz=lat)?,long?,zoomlevel?
 
 **Examples:**
 
-Region Ocoña[34]: <https://gistin.users.earthengine.app/view/fogoasis#regionid=34>
-Villa María:  <https://gistin.users.earthengine.app/view/fogoasis#llz=-12.135,-76.915,11>
+Region Ocoña[34]: <https://gistin.users.earthengine.app/view/fogoasis#regionid=34> Villa María:  <https://gistin.users.earthengine.app/view/fogoasis#llz=-12.135,-76.915,11>
