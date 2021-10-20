@@ -28,6 +28,8 @@ Only 4% of fog oases are protected, most are threatened by mining, urban develop
 
 -   *Fog oasis sites as ESRI shapefile: <https://github.com/gistin/fog-oases/tree/main/data>/FO_locs2021.\**
 
+-   Verdant and *tillandsia* fog oasis, with sites as KMZ for Google earth etc [*https://github.com/gistin/fog-oases/tree/main/data/fog_oasis_2021.kmz*](https://github.com/gistin/fog-oases/tree/main/data/fog_oasis_2021.kmz)
+
 -   *Fog oasis regions as ESRI shapefile: <https://github.com/gistin/fog-oases/tree/main/data>/Fo_regions2021.\**
 
 -   Fog oasis sites, see supplementary excel file,sheet "1 Fog Oasis sites" Fog oasis region names and sites, see supplementary excel file, sheet "2 Region names and sites" <https://github.com/gistin/fog-oases/blob/main/data/Sub%20information.xlsx>
@@ -58,10 +60,14 @@ Only 4% of fog oases are protected, most are threatened by mining, urban develop
 
 Interactive google earth engine maps: <https://gistin.users.earthengine.app/view/fogoasis>
 
-To highlight and zoom to a region: [https://gistin.users.earthengine.app/view/fogoasis\\\#regionid=](https://gistin.users.earthengine.app/view/fogoasis\#regionid=)?
+To highlight and zoom to a region: [https://gistin.users.earthengine.app/view/fogoasis\\\#regionid=](https://gistin.users.earthengine.app/view/fogoasis#regionid=)?
 
-To zoom to a point: [https://gistin.users.earthengine.app/view/fogoasis\\\#llz=lat](https://gistin.users.earthengine.app/view/fogoasis\#llz=lat)?,long?,zoomlevel?
+To zoom to a point: [https://gistin.users.earthengine.app/view/fogoasis\\\#llz=lat](https://gistin.users.earthengine.app/view/fogoasis#llz=lat)?,long?,zoomlevel?
 
 **Examples:**
 
 Region Ocoña[34]: <https://gistin.users.earthengine.app/view/fogoasis#regionid=34> Villa María:  <https://gistin.users.earthengine.app/view/fogoasis#llz=-12.135,-76.915,11>
+
+### Licence
+
+All code, paper and data is under the [Creative Commons CC-BY-NC-ND license](https://creativecommons.org/licenses/by-nc-nd/2.0/).
